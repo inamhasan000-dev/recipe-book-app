@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '../styles/_variables.scss';
+@import '../styles/_keyframe-animations.scss';
+
+/* CSS Custom Properties */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans, system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Base Styling */
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
+  /* your desired background */
+  -webkit-text-fill-color: #fff !important;
+  /* optional */
+  caret-color: white;
+  /* optional */
+}
